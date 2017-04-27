@@ -1,0 +1,47 @@
+Inspiration
+
+I design & code websites.
+–
+My tools are Adobe Creative Suite, WordPress, PHP, JS, HTML, CSS, MAMP, MySQL, Pen & Paper. Available for freelance projects.
+–
+My passions lie in design, digital and creative application. I aim to produce work that is accessible, aesthetically pleasing and driven by simplicity. I work closely with clients and believe that communication is key. I am experienced in branding and digital marketing.
+–
+I am on Twitter, and I use Instagram as a digital sketchbook.
+–
+Some of my work has been acknowledged by the likes of the Roses Design Awards, the Big Chip Awards & the London International Advertising and Design Awards.
+–
+Some work has been featured in nice little books published by Taschen.
+–
+Previously worked, for over a decade, as a Senior designer & Lead developer at a branding & digital agency based in Merseyside.
+–
+You can contact me by email here.
+
+
+I'm thinking I will jave a grid of images of my face that follow you around the screen when you move the mouse. on mobile it'll just be one static image. 
+
+Also, have my vital statistics in json. 
+
+Maybe project descriptions that I have worked on also. 
+
+{
+	"Michael Oliver Smith":{
+		"namingConventions":{
+			"psudeoName": "Ollie",
+			"whenIveDoneSomethingBad":"Michael!"
+		},
+		"VitalStatistics":{
+			"Age":"31",
+			"Height":"182cm",
+			"Weight":"Variable"
+		},
+		"Education":{
+			"BSc Computer Science": "2:1",
+			"A levels": "A-C * 3",
+		},
+		"Hobbies":{
+			"Video Games": "Final fantasy, Zelda, Way to much Fifa",
+			"Books": "Fantasy novels, Japanese escapism, Georgraphy and History",
+			"Music": "Listening to; everything, Playing; guitar, drums, bass guitar, vox (all pretty badly)"
+		}
+	}
+}
