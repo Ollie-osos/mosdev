@@ -2,15 +2,14 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pkg = require('./package.json');
 var imagemin = require('gulp-imagemin');
-var concat = require('gulp-concat');
-var stripDebug = require('gulp-strip-debug');
 var uglify = require('gulp-uglify');
 var minifyCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
-var sassGlob = require('gulp-sass-glob');
 var autoprefixer = require('gulp-autoprefixer');
-var devLocation = 'source/assets/';
-var publishedLocation = 'public/assets/';
+var livereload = require('gulp-livereload');
+var devLocation = '';
+var publishedLocation = '';
+// var publishedLocation = '../src/assets/styles';
 
 // Copy third party libraries from /node_modules into /vendor
 gulp.task('vendor', function() {
@@ -28,15 +27,14 @@ gulp.task('vendor', function() {
 
 gulp.task('sass', function() {
   gulp
-    .src(devLocation + '/css/core.scss')
-    .pipe(sassGlob())
+    .src(devLocation + 'css/scss/style.scss')
     .pipe(
       sass({
-        includePaths: [
-          './node_modules/bootstrap/dist/**/*',
-          '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
-          '!./node_modules/bootstrap/dist/css/bootstrap-reboot*',
-        ],
+        // includePaths: [
+        //   './node_modules/bootstrap/dist/**/*',
+        //   '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
+        //   '!./node_modules/bootstrap/dist/css/bootstrap-reboot*',
+        // ],
         // errLogToConsole: false,
         // sourceMap: 'sass',
         // outputStyle: 'compressed'
@@ -51,18 +49,19 @@ gulp.task('sass', function() {
       })
     )
     .pipe(minifyCSS())
-    .pipe(gulp.dest(publishedLocation + 'css/'))
-    .pipe(notify('gulp complete'))
-    .pipe(livereload());
+    .pipe(gulp.dest(publishedLocation + 'css/'));
 });
 
 gulp.task('sass_dev', function() {
   gulp
-    .src(devLocation + '/css/core.scss')
-    .pipe(sassGlob())
+    .src(devLocation + 'css/scss/style.scss')
     .pipe(
       sass({
-        includePaths: ['./node-modules/foundation-sites/scss'],
+        // includePaths: [
+        //   './node_modules/bootstrap/dist/**/*',
+        //   '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
+        //   '!./node_modules/bootstrap/dist/css/bootstrap-reboot*',
+        // ],
         // errLogToConsole: false,
         // sourceMap: 'sass',
         // outputStyle: 'compressed'
@@ -76,13 +75,8 @@ gulp.task('sass_dev', function() {
         browsers: ['ie >= 9', 'last 2 versions'], // auto prefix for cross-browser support
       })
     )
-    .pipe(gulp.dest(publishedLocation + 'css/'))
-    .pipe(notify('gulp complete'))
-    .pipe(livereload());
+    .pipe(gulp.dest(publishedLocation + 'css/'));
 });
-
-// Default task
-gulp.task('default', ['vendor']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -93,9 +87,13 @@ gulp.task('browserSync', function() {
   });
 });
 
-// Dev task
-gulp.task('dev', ['browserSync'], function() {
-  gulp.watch('./css/*.css', browserSync.reload);
-  gulp.watch('./js/*.js', browserSync.reload);
-  gulp.watch('./*.html', browserSync.reload);
+gulp.task('watch', function() {
+  // Watch .scss files
+  gulp.watch(devLocation + 'css/**/*.scss', ['sass_dev']);
 });
+
+// Dev task
+gulp.task('dev', ['sass_dev', 'watch', 'browserSync']);
+
+// Production task
+gulp.task('default', ['sass']);

@@ -1,0 +1,9 @@
+/* line 1, css/scss/style.scss */
+h1 {
+  height: 300px; }
+  /* line 3, css/scss/style.scss */
+  h1.yes {
+    color: blue;
+    margin-bottom: 50px; }
+
+/*# sourceMappingURL=../../sass */
