@@ -1,9 +1,14 @@
-/* line 1, css/scss/style.scss */
+@import url("https://fonts.googleapis.com/css?family=Lekton:400,400italic,700");
+/* line 1, css/scss/_type.scss */
 h1 {
+  font-family: 'Lekton', serif;
+  font-weight: 700;
+  font-size: 80px;
+  line-height: 80px;
   height: 300px; }
-  /* line 3, css/scss/style.scss */
+  /* line 4, css/scss/_type.scss */
   h1.yes {
-    color: blue;
+    color: red;
     margin-bottom: 50px; }
 
 /*# sourceMappingURL=../../sass */

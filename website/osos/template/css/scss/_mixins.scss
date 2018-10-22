@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Lekton:400,400italic,700');
+
+@mixin _lekton {
+	font-family: 'Lekton', serif;
+	font-weight: 400;
+}
+@mixin _lektonBold {
+	font-family: 'Lekton', serif;
+	font-weight: 700;
+}
+@mixin _lektonItalic {
+	font-family: 'Lekton', serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
+@mixin _mainTitle {
+	@include _lektonBold;
+	font-size: 80px;
+	line-height: 80px;
+}

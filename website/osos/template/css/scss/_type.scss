@@ -1,0 +1,8 @@
+h1{
+	@include _mainTitle;
+	height: 300px;
+	&.yes{
+		color: red;
+		margin-bottom: 50px; 
+	}
+}
