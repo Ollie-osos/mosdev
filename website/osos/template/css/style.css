@@ -1,14 +1,42 @@
 @import url("https://fonts.googleapis.com/css?family=Lekton:400,400italic,700");
 /* line 1, css/scss/_type.scss */
-h1 {
+body {
+  font-family: 'Lekton', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  margin-bottom: 1.5rem; }
+
+/* line 6, css/scss/_type.scss */
+h1, .h1 {
   font-family: 'Lekton', serif;
   font-weight: 700;
-  font-size: 80px;
-  line-height: 80px;
-  height: 300px; }
-  /* line 4, css/scss/_type.scss */
-  h1.yes {
-    color: red;
-    margin-bottom: 50px; }
+  font-size: 2rem;
+  margin-bottom: 1.5rem; }
+
+/* line 12, css/scss/_type.scss */
+h2, .h2, a.h2 {
+  font-family: 'Lekton', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem; }
+
+/* line 17, css/scss/_type.scss */
+h3, .h3, a.h3 {
+  font-family: 'Lekton', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #3A5752; }
+
+/* line 24, css/scss/_type.scss */
+a {
+  border-bottom: thin solid;
+  margin-bottom: 5px;
+  border-width: 20%;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in; }
+  /* line 29, css/scss/_type.scss */
+  a:hover {
+    border-width: 100%; }
 
 /*# sourceMappingURL=../../sass */

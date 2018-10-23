@@ -58,7 +58,9 @@ gulp.task('sass_dev', function() {
     .pipe(
       sass({
         // includePaths: [
-        //   './node_modules/bootstrap/dist/**/*',
+        //   '/node_modules/bootstrap/scss/bootstrap*',
+        //   '/node_modules/bootstrap/scss/bootstrap-grid*',
+        //   '/node_modules/bootstrap/scss/bootstrap-reboot*'
         //   '!./node_modules/bootstrap/dist/css/bootstrap-grid*',
         //   '!./node_modules/bootstrap/dist/css/bootstrap-reboot*',
         // ],

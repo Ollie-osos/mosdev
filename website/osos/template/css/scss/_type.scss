@@ -1,8 +1,32 @@
-h1{
-	@include _mainTitle;
-	height: 300px;
-	&.yes{
-		color: red;
-		margin-bottom: 50px; 
+body{
+	@include _lekton;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+h1, .h1{
+	@include _lektonBold;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+
+h2, .h2, a.h2{
+	@include _lektonBold;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+}
+h3, .h3, a.h3{
+	@include _lektonBold;
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	color: $green;
+}
+
+a{
+	border-bottom: thin solid;
+	margin-bottom: 5px;
+	border-width: 20%;
+	transition: all 0.3s ease-in;
+	&:hover{
+		border-width: 100%;
 	}
 }
